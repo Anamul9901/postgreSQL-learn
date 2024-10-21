@@ -10,9 +10,10 @@ CREATE Table "user"(
 CREATE Table post(
     id SERIAL PRIMARY KEY,
     title TEXT NOT NULL,
+    user_id INTEGER REFERENCES "user"(id)
     -- user_id INTEGER REFERENCES "user"(id) ON DELETE CASCADE
     -- user_id INTEGER REFERENCES "user"(id) ON DELETE set NULL
-    user_id INTEGER REFERENCES "user"(id) ON DELETE set DEFAULT DEFAULT 2
+    -- user_id INTEGER REFERENCES "user"(id) ON DELETE set DEFAULT DEFAULT 2
 );
 -- set not null in fkey
 ALTER Table post
@@ -51,3 +52,6 @@ SELECT * from post;
 
 DELETE FROM "user"
     WHERE id = 4;
+
+
+
