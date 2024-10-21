@@ -52,3 +52,10 @@ SELECT  * FROM post as p
 -- aikhane right outer dele hoi only right dele o hoi
 SELECT * FROM post p 
     RIGHT OUTER JOIN "user" u ON p.user_id = u.id;
+
+
+
+-- full join ---------------------------
+
+SELECT * FROM post as p
+    FULL OUTER JOIN "user" u ON p.user_id = u.id;
